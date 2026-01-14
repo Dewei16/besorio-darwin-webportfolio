@@ -78,15 +78,13 @@
                   <label for="message">Message</label>
                 </div>
 
-                <!-- ✅ reCAPTCHA (DO NOT REMOVE) -->
-                <div class="d-flex justify-content-end mb-3">
-                  <div ref="recaptchaContainer"></div>
-                </div>
-
                 <!-- Submit Button (CTA style) -->
                 <button class="cta-btn w-100" type="submit" :disabled="isLoading">
                   {{ isLoading ? "Sending..." : "Submit" }}
                 </button>
+                <div class="d-flex justify-content-end mb-3">
+                  <div ref="recaptchaContainer"></div>
+                </div>
               </form>
             </div>
           </div>
@@ -113,8 +111,8 @@ const message = ref("");
 const isLoading = ref(false);
 const notyf = new Notyf();
 
-// ✅ reCAPTCHA configs
-const SITE_KEY = "6LeLSEksAAAAAE6pvL_Lb1rvNcQDMnAuRMfo0YPU";
+//reCAPTCHA configs
+const SITE_KEY = "6LcgcUosAAAAABHcOf9UOvUtto882tZsPfAgDa2D";
 const recaptchaContainer = ref(null);
 const recaptchaWidgetId = ref(null);
 const recaptchaToken = ref("");
@@ -127,43 +125,41 @@ function onRecaptchaExpired() {
   recaptchaToken.value = "";
 }
 
-// render reCAPTCHA
+// Function to render the reCAPTCHA widget
 function renderRecaptcha() {
-  if (!window.grecaptcha || !recaptchaContainer.value) return;
-
-  // prevent double render
-  if (recaptchaWidgetId.value !== null) return;
+  if (!window.grecaptcha) {
+    console.error('reCAPTCHA not loaded');
+    return;
+  }
 
   recaptchaWidgetId.value = window.grecaptcha.render(recaptchaContainer.value, {
     sitekey: SITE_KEY,
-    size: "normal",
+    size: 'normal', // or 'compact'
     callback: onRecaptchaSuccess,
-    "expired-callback": onRecaptchaExpired,
+    'expired-callback': onRecaptchaExpired,
   });
 }
 
+// Function to reset reCAPTCHA 
 function resetRecaptcha() {
-  if (window.grecaptcha && recaptchaWidgetId.value !== null) {
+  if (recaptchaWidgetId.value !== null) {
     window.grecaptcha.reset(recaptchaWidgetId.value);
-    recaptchaToken.value = "";
+    recaptchaToken.value = '';
   }
 }
 
-let intervalId = null;
 
 onMounted(() => {
-  // wait for grecaptcha script to be ready
-  intervalId = setInterval(() => {
+  const interval = setInterval(() => {
     if (window.grecaptcha && window.grecaptcha.render) {
       renderRecaptcha();
-      clearInterval(intervalId);
-      intervalId = null;
+      clearInterval(interval);
     }
-  }, 120);
-});
+  }, 100);
 
-onBeforeUnmount(() => {
-  if (intervalId) clearInterval(intervalId);
+  onBeforeUnmount(() => {
+    clearInterval(interval);
+  });
 });
 
 const submitForm = async () => {
