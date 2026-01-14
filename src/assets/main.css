@@ -1,0 +1,146 @@
+/* ===== BRAND PALETTE ===== */
+:root{
+  --caribbean-current: #007185ff;
+  --viridian: #2E8A6Cff;
+  --asparagus: #5DA453ff;
+  --apple-green: #8BBD39ff;
+  --pear: #BAD720ff;
+  --yellow: #E8F007ff;
+}
+
+/* ===== THEME VARIABLES (LIGHT) ===== */
+:root,
+:root[data-theme="light"]{
+  /* background */
+  --bg: #f4f7fb;              /* slightly darker than white */
+  --surface: #ffffff;
+  --section-bg: #f6f8fc;
+
+  --nav-bg: #e9f0fb;
+  --border: rgba(0, 0, 0, 0.08);
+
+  /* text */
+  --text: rgba(0, 0, 0, 0.88);
+  --muted: rgba(0, 0, 0, 0.65);
+
+  /* UI mappings (USE YOUR COLORS) */
+  --accent: var(--caribbean-current);
+  --btn-border: var(--caribbean-current);
+  --btn-hover: rgba(0, 113, 133, 0.08);
+
+  /* gradient used by hero + borders */
+  --gradient-main: linear-gradient(
+    135deg,
+    var(--viridian),
+    var(--asparagus),
+    var(--apple-green),
+    var(--pear),
+    var(--yellow)
+  );
+}
+
+/* ===== THEME VARIABLES (DARK) ===== */
+:root[data-theme="dark"]{
+  --bg: #0b1220;
+  --surface: #0f1b2e;
+  --section-bg: #0b1220;
+
+  --nav-bg: #0f1b2e;
+  --border: rgba(255, 255, 255, 0.1);
+
+  --text: rgba(255, 255, 255, 0.92);
+  --muted: rgba(255, 255, 255, 0.7);
+
+  /* UI mappings (USE YOUR COLORS) */
+  --accent: var(--pear);
+  --btn-border: var(--pear);
+  --btn-hover: rgba(186, 215, 32, 0.12);
+
+  --gradient-main: linear-gradient(
+    135deg,
+    var(--apple-green),
+    var(--pear),
+    var(--yellow)
+  );
+}
+
+/* ===== FULL-WIDTH GRADIENT DIVIDER ===== */
+.section-divider{
+  width: 100%;
+  height: 4px;                 /* thickness */
+  margin: 0;
+  border-radius: 0;
+
+  background: linear-gradient(
+    90deg,
+    var(--asparagus),
+    var(--apple-green),
+    var(--pear),
+    var(--yellow)
+  );
+}
+
+/* ===== SHARED SECTION HEADER (ABOUT, SERVICES, PROJECTS, ETC.) ===== */
+.section-header{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+  margin-bottom: 56px;
+}
+
+/* Main title */
+.section-title{
+  margin: 0 0 6px 0;
+  padding: 0;
+  line-height: 1.15;
+  font-size: clamp(2.1rem, 4vw, 3.2rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+/* Subtitle */
+.section-subtitle{
+  margin: 0;
+  padding: 0;
+  font-size: 0.95rem;
+  font-weight: 600;
+  opacity: 0.85;
+  color: var(--text);
+}
+
+
+/* ===== GLOBAL APPLICATION ===== */
+html, body{
+  background: var(--bg);
+  color: var(--text);
+}
+
+/* text-gradient helper (used by hero text) */
+.text-gradient{
+  background: var(--gradient-main);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Section subtitles (DON'T hardcode black/white) */
+.section-subtitle{
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--text);
+  opacity: 0.85;
+}
+
+/* Contact button dark-mode override (keep if you want simple border in dark) */
+:root[data-theme="dark"] .contact-btn{
+  background-image: none;
+  border: 2px solid var(--pear);
+  color: #fff;
+}
+
+:root[data-theme="dark"] .contact-btn:hover{
+  background: rgba(186,215,32,0.12);
+}
