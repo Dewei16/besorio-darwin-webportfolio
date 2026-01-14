@@ -98,7 +98,6 @@ import { Notyf } from "notyf";
 import "notyf/notyf.min.css";
 
 const WEB3FORMS_ACCESS_KEY = "87af57f9-6cdb-46cf-916e-df0609be70a9";
-
 const name = ref("");
 const email = ref("");
 const phone = ref("");
@@ -108,7 +107,7 @@ const isLoading = ref(false);
 const notyf = new Notyf();
 
 //reCAPTCHA configs
-const SITE_KEY = "6LdveEosAAAAACFILy8090bQ2qQynmxeNPDLG6jW";
+const SITE_KEY = "6LeLSEksAAAAAE6pvL_Lb1rvNcQDMnAuRMfo0YPU";
 const recaptchaContainer = ref(null);
 const recaptchaWidgetId = ref(null);
 const recaptchaToken = ref("");
