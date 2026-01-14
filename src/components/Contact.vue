@@ -39,7 +39,6 @@
                     placeholder="Enter your name..."
                     required
                   />
-                  <label for="name">Full name</label>
                 </div>
 
                 <div class="form-floating mb-3">
@@ -51,7 +50,6 @@
                     placeholder="name@example.com"
                     required
                   />
-                  <label for="email">Email address</label>
                 </div>
 
                 <div class="form-floating mb-3">
@@ -63,7 +61,6 @@
                     placeholder="(123) 456-7890"
                     required
                   />
-                  <label for="phone">Phone number</label>
                 </div>
 
                 <div class="form-floating mb-3">
@@ -75,7 +72,6 @@
                     style="height: 10rem"
                     required
                   ></textarea>
-                  <label for="message">Message</label>
                 </div>
 
                 <!-- Submit Button (CTA style) -->
@@ -112,7 +108,7 @@ const isLoading = ref(false);
 const notyf = new Notyf();
 
 //reCAPTCHA configs
-const SITE_KEY = "6LcgcUosAAAAABHcOf9UOvUtto882tZsPfAgDa2D";
+const SITE_KEY = "6LeUc0osAAAAAMy_zsVUsGpvoLKho4Wu1bLZPhMv";
 const recaptchaContainer = ref(null);
 const recaptchaWidgetId = ref(null);
 const recaptchaToken = ref("");
@@ -309,4 +305,33 @@ const submitForm = async () => {
     height: 320px;
   }
 }
+
+/* ===== CONTACT FORM – DARK MODE FIX ===== */
+:root[data-theme="dark"] #contact .form-control,
+:root[data-theme="dark"] #contact textarea {
+  background: var(--surface);        /* dark surface */
+  color: var(--text);                /* white text */
+  border: 1px solid var(--border);
+}
+
+/* Placeholder text */
+:root[data-theme="dark"] #contact .form-control::placeholder,
+:root[data-theme="dark"] #contact textarea::placeholder {
+  color: var(--muted);
+}
+
+/* Floating labels */
+:root[data-theme="dark"] #contact .form-floating > label {
+  color: var(--muted);
+}
+
+/* Focus state */
+:root[data-theme="dark"] #contact .form-control:focus,
+:root[data-theme="dark"] #contact textarea:focus {
+  background: var(--surface);
+  color: var(--text);
+  border-color: var(--pear);
+  box-shadow: none;
+}
+
 </style>
