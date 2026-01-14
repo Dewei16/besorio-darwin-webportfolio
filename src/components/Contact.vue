@@ -108,7 +108,7 @@ const isLoading = ref(false);
 const notyf = new Notyf();
 
 //reCAPTCHA configs
-const SITE_KEY = "6LeUc0osAAAAAMy_zsVUsGpvoLKho4Wu1bLZPhMv";
+const SITE_KEY = "6LdveEosAAAAACFILy8090bQ2qQynmxeNPDLG6jW";
 const recaptchaContainer = ref(null);
 const recaptchaWidgetId = ref(null);
 const recaptchaToken = ref("");
@@ -333,5 +333,25 @@ const submitForm = async () => {
   border-color: var(--pear);
   box-shadow: none;
 }
+
+/* ===== CONTACT FORM – LIGHT MODE PLACEHOLDER FIX ===== */
+:root[data-theme="light"] #contact .form-control::placeholder,
+:root[data-theme="light"] #contact textarea::placeholder {
+  color: rgba(0, 0, 0, 0.55);   /* clearly visible but still soft */
+  opacity: 1;                 /* IMPORTANT for Firefox */
+}
+
+/* Floating label initial state */
+:root[data-theme="light"] #contact .form-floating > label {
+  color: rgba(0, 0, 0, 0.65);
+}
+
+/* Input background (ensure contrast) */
+:root[data-theme="light"] #contact .form-control,
+:root[data-theme="light"] #contact textarea {
+  background: #ffffff;
+  color: rgba(0, 0, 0, 0.88);
+}
+
 
 </style>
