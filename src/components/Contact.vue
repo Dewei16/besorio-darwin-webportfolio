@@ -10,25 +10,26 @@
           <div class="section-subtitle">Let's work together!</div>
         </div>
 
-        <!-- CARD (Gradient Border) -->
+        <!-- ONE CARD (Gradient Border) -->
         <div class="contact-card">
-          <div class="row g-4 align-items-stretch">
-            <!-- Google Map -->
-            <div class="col-12 col-lg-6">
-              <div class="map-frame h-100">
+          <!-- g-0 removes inner gaps so the map can fully fill left side -->
+          <div class="row g-0 align-items-stretch">
+
+            <!-- LEFT: MAP (fills full height of the card content area) -->
+            <div class="col-12 col-lg-6 map-col">
+              <div class="map-frame">
                 <iframe
+                  class="map-iframe"
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3859.9446027400186!2d120.99178971532284!3d14.599512589814065!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397c9f88f0aaf93%3A0x1c6aa97f6ac5311a!2sCentro%20Escolar%20University!5e0!3m2!1sen!2sph!4v1634559098753!5m2!1sen!2sph"
-                  width="100%"
-                  height="450"
-                  style="border:0;"
-                  allowfullscreen=""
                   loading="lazy"
+                  allowfullscreen
+                  referrerpolicy="no-referrer-when-downgrade"
                 ></iframe>
               </div>
             </div>
 
-            <!-- Contact Form -->
-            <div class="col-12 col-lg-6">
+            <!-- RIGHT: FORM -->
+            <div class="col-12 col-lg-6 form-col">
               <form class="contact-form" @submit.prevent="submitForm">
                 <div class="form-floating mb-3">
                   <input
@@ -74,22 +75,25 @@
                   ></textarea>
                 </div>
 
-                <!-- Submit Button (CTA style) -->
+                <!-- Submit Button -->
                 <button class="cta-btn w-100" type="submit" :disabled="isLoading">
                   {{ isLoading ? "Sending..." : "Submit" }}
                 </button>
-                <div class="d-flex justify-content-end mb-3">
+
+                <div class="d-flex justify-content-end mt-3">
                   <div ref="recaptchaContainer"></div>
                 </div>
               </form>
             </div>
+
           </div>
         </div>
         <!-- /card -->
       </div>
     </div>
   </section>
-    <div class="section-divider"></div>
+
+  <div class="section-divider"></div>
 </template>
 
 <script setup>
@@ -237,13 +241,44 @@ const submitForm = async () => {
   box-shadow: 0 22px 60px rgba(0, 0, 0, 0.08);
 }
 
-/* MAP */
+/* IMPORTANT: remove inner gap so map fully occupies */
+.map-col {
+  padding: 0;
+}
+
+/* The map wrapper must stretch */
 .map-frame {
+  height: 100%;
+  min-height: 100%;
   border-radius: 18px;
   overflow: hidden;
-  border: 1px solid var(--border);
-  background: var(--bg);
+  background: #fff;
+  display: flex;
+}
+
+/* iframe fills the entire left side */
+.map-iframe {
+  width: 100%;
   height: 100%;
+  min-height: 100%;
+  border: 0;
+  display: block;
+}
+
+/* Right side spacing */
+.form-col {
+  padding: 22px;
+}
+
+/* MOBILE: map gets a fixed height so it doesn’t collapse */
+@media (max-width: 991.98px) {
+  .map-frame {
+    height: 320px;
+    min-height: 320px;
+  }
+  .form-col {
+    padding: 18px;
+  }
 }
 
 /* INPUTS */
@@ -298,33 +333,23 @@ const submitForm = async () => {
   transform: none;
 }
 
-/* MOBILE */
-@media (max-width: 991.98px) {
-  .map-frame iframe {
-    height: 320px;
-  }
-}
-
 /* ===== CONTACT FORM – DARK MODE FIX ===== */
 :root[data-theme="dark"] #contact .form-control,
 :root[data-theme="dark"] #contact textarea {
-  background: var(--surface);        /* dark surface */
-  color: var(--text);                /* white text */
+  background: var(--surface);
+  color: var(--text);
   border: 1px solid var(--border);
 }
 
-/* Placeholder text */
 :root[data-theme="dark"] #contact .form-control::placeholder,
 :root[data-theme="dark"] #contact textarea::placeholder {
   color: var(--muted);
 }
 
-/* Floating labels */
 :root[data-theme="dark"] #contact .form-floating > label {
   color: var(--muted);
 }
 
-/* Focus state */
 :root[data-theme="dark"] #contact .form-control:focus,
 :root[data-theme="dark"] #contact textarea:focus {
   background: var(--surface);
@@ -336,21 +361,17 @@ const submitForm = async () => {
 /* ===== CONTACT FORM – LIGHT MODE PLACEHOLDER FIX ===== */
 :root[data-theme="light"] #contact .form-control::placeholder,
 :root[data-theme="light"] #contact textarea::placeholder {
-  color: rgba(0, 0, 0, 0.55);   /* clearly visible but still soft */
-  opacity: 1;                 /* IMPORTANT for Firefox */
+  color: rgba(0, 0, 0, 0.55);
+  opacity: 1;
 }
 
-/* Floating label initial state */
 :root[data-theme="light"] #contact .form-floating > label {
   color: rgba(0, 0, 0, 0.65);
 }
 
-/* Input background (ensure contrast) */
 :root[data-theme="light"] #contact .form-control,
 :root[data-theme="light"] #contact textarea {
   background: #ffffff;
   color: rgba(0, 0, 0, 0.88);
 }
-
-
 </style>
