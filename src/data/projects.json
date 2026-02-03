@@ -3,60 +3,66 @@
     "id": 1,
     "title": "e-Commerce API Documentation",
     "description": "Dynamic E-Commerce Workflow Management. The system features dynamic routes for order processing, real-time inventory updates, and secure user authentication. It also supports seamless automated order reporting and comprehensive product management. Documented Backend API published publicly using Postman.",
-    "image": "/images/e-commerve-api.png",
+    "image": "/images/ecommerceapi.png",
     "technology": "Node.js / Express / MongoDB / Postman",
     "type": "blog",
     "slug": "ecommerce-api-documentation",
-    "category": "API"
+    "category": "API",
+    "link": "https://documenter.getpostman.com/view/49574574/2sB3dJyBqU"
   },
   {
     "id": 2,
     "title": "e-Commerce Application",
     "description": "MEVN E-Commerce Platform. The platform features dynamic product catalog with filtering and sorting, real-time search, seamless cart updates, secure checkout, and a comprehensive admin dashboard with real-time analytics and user management capabilities",
     "image": "/images/readcartfs.png",
-    "technology": "MEVN (MongoDB, ExpressJs, VueJs, NodeJs",
+    "technology": "MEVN (MongoDB, ExpressJS, VueJS, NodeJS)",
     "type": "blog",
-    "slug": "course-booking-api-documentation",
-    "category": "Apps"
+    "slug": "ecommerce-application",
+    "category": "Apps",
+    "link": "http://zuitt-bootcamp-prod-582-9212-besorio.s3-website.us-east-1.amazonaws.com"
   },
   {
     "id": 3,
     "title": "Fitness Tracker Application",
     "description": "A comprehensive health and wellness ecosystem built with MongoDB, Express.js, Vue.js, and Node.js. The platform enables users to log workouts, and visualize progress through a high-performance, real-time interface.",
     "image": "/images/fitnessTrackerfs.png",
-    "technology": "MEVN (MongoDB, ExpressJs, VueJs, NodeJs",
+    "technology": "MEVN (MongoDB, ExpressJS, VueJS, NodeJS)",
     "type": "blog",
-    "slug": "course-booking-app",
-    "category": "Apps"
+    "slug": "fitness-tracker-app",
+    "category": "Apps",
+    "link": "https://appbuilding-fs-1.onrender.com"
   },
   {
     "id": 4,
     "title": "Movie Catalog Application",
     "description": "MEVN - A high-performance media management platform built on the MongoDB, Express.js, Vue.js, and Node.js stack. This application provides a centralized hub for discovering films, managing personal watchlists, and accessing real-time industry data through a sleek, reactive interface.",
     "image": "/images/moviefs.png",
-    "technology": "MEVN (MongoDB, ExpressJs, VueJs, NodeJs",
+    "technology": "MEVN (MongoDB, ExpressJS, VueJS, NodeJS)",
     "type": "blog",
-    "slug": "ecommerce-app",
-    "category": "Apps"
+    "slug": "movie-catalog-app",
+    "category": "Apps",
+    "link": "https://movieappclient-besorio.onrender.com"
   },
   {
     "id": 5,
     "title": "Blog Application",
     "description": "A full-stack MERN web application designed for seamless content creation and management. It features a robust RESTful API, secure user JWT authentication, and complete CRUD functionality, allowing users to publish, edit, and delete posts while providing a responsive, modern interface for readers.",
     "image": "/images/blogfs.png",
-    "technology": "MEVN (MongoDB, ExpressJs, VueJs, NodeJs",
+    "technology": "MEVN (MongoDB, ExpressJS, VueJS, NodeJS)",
     "type": "blog",
-    "slug": "airline-booking-mockup",
-    "category": "Apps"
+    "slug": "blog-application",
+    "category": "Apps",
+    "link": "https://blog-app-client-besorio.vercel.app"
   },
   {
     "id": 6,
     "title": "Portfolio",
-    "description": "Created a clean, scalable and stunning personal portfolio website using HRML5, CSS3, Bootstrap, JavaScript and VueJS to showcase projects, skills, and professional achievements. The design adapts seamlessly across all screen sizes, delivering an engaging user experience on desktops, tablets, and mobile devices",
-    "image": "/images/porfolio.png",
+    "description": "Created a clean, scalable and stunning personal portfolio website using HTML5, CSS3, Bootstrap, JavaScript and VueJS to showcase projects, skills, and professional achievements. The design adapts seamlessly across all screen sizes, delivering an engaging user experience on desktops, tablets, and mobile devices",
+    "image": "/images/portfolio.png",
     "technology": "VueJS / UI Design / Figma",
     "type": "blog",
-    "slug": "airline-booking-prototype",
-    "category": "UI/UX"
+    "slug": "personal-portfolio",
+    "category": "UI/UX",
+    "link": "https://besorio-darwin-webportfolio.vercel.app/"
   }
 ]

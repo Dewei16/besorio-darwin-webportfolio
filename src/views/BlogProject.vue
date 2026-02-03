@@ -2,7 +2,6 @@
   <section class="blog-page">
     <div class="container px-5">
       <div class="blog-grid">
-        <!-- LEFT: Opened Post -->
         <main class="blog-main">
           <article v-if="post" class="post-card">
             <img :src="post.image" class="post-img" :alt="post.title" />
@@ -17,6 +16,16 @@
               <p class="post-desc">{{ post.description }}</p>
 
               <div class="post-actions">
+                <a 
+                  v-if="post.link"
+                  :href="post.link" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  class="pill-btn live-btn"
+                >
+                  View Live Project <i class="fa-solid fa-arrow-up-right-from-square ms-1"></i>
+                </a>
+
                 <router-link class="pill-btn" to="/blog-projects">Back to Blog Projects</router-link>
                 <router-link class="pill-btn" to="/">Back to Home</router-link>
               </div>
@@ -30,7 +39,6 @@
           </div>
         </main>
 
-        <!-- RIGHT: Sidebar -->
         <aside class="blog-side">
           <div class="widget-card">
             <h4 class="widget-title">Search</h4>
@@ -47,7 +55,7 @@
                 v-for="p in filtered"
                 :key="p.id"
                 class="widget-item"
-                :class="{ active: p.slug === slug }"
+                :class="{ active: p.slug === props.slug }"
                 :to="{ name: 'BlogProject', params: { slug: p.slug } }"
               >
                 <div class="widget-item-title">{{ p.title }}</div>
@@ -76,17 +84,15 @@ const route = useRoute();
 const query = ref("");
 
 const props = defineProps({
-  slug: String // Capture the slug directly from the URL
+  slug: String 
 });
 
 const blogProjects = computed(() => projects.filter((p) => p.type === "blog"));
 
-// Find the specific post based on the slug prop
 const post = computed(() =>
   blogProjects.value.find((p) => p.slug === props.slug)
 );
 
-// Scroll to top when the slug changes (sidebar clicks)
 watch(() => props.slug, () => {
   window.scrollTo({ top: 0, behavior: 'smooth' });
 });
@@ -109,6 +115,7 @@ function shortTech(text = "") {
 </script>
 
 <style scoped>
+/* --- RETAINED YOUR ORIGINAL STYLES --- */
 .blog-page{ padding: 90px 0; background: var(--section-bg); }
 
 .blog-grid{
@@ -257,6 +264,16 @@ function shortTech(text = "") {
     linear-gradient(var(--btn-hover), var(--btn-hover)),
     linear-gradient(135deg, var(--asparagus), var(--apple-green), var(--pear), var(--yellow));
 }
+
+/* ✅ ADDED: Live Button Highlight */
+.live-btn {
+  background-image: 
+    linear-gradient(var(--apple-green), var(--apple-green)), 
+    linear-gradient(135deg, var(--asparagus), var(--apple-green), var(--pear), var(--yellow)) !important;
+  color: #fff !important;
+}
+
+.ms-1 { margin-left: 0.5rem; }
 
 @media (max-width: 991.98px){
   .blog-grid{ grid-template-columns: 1fr; }
