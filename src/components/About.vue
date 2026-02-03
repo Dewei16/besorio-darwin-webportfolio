@@ -34,7 +34,7 @@
               </a>
             </div>
                     <!-- CTA -->
-            <a class="hero-cta" target="_blank" href="./BESORIO_DARWIN_FULLSTACK_RESUME.pdf">
+            <a class="hero-cta" target="_blank" href="./FS_BESORIO_RESUME.pdf">
               Download Resume
             </a>
           </div>
