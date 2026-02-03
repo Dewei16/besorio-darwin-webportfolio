@@ -34,14 +34,14 @@
             </li>
 
             <li class="nav-item">
-              <button class="nav-link nav-link-btn" type="button" @click="goTo('#my-projects')">
-                Projects
+              <button class="nav-link nav-link-btn" type="button" @click="goTo('#services')">
+                Services
               </button>
             </li>
 
             <li class="nav-item">
-              <button class="nav-link nav-link-btn" type="button" @click="goTo('#services')">
-                Services
+              <button class="nav-link nav-link-btn" type="button" @click="goTo('#my-projects')">
+                Projects
               </button>
             </li>
 

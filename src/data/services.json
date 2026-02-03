@@ -1,35 +1,35 @@
 {
   "topServices": [
     {
-      "icon": "fa-regular fa-sun",
-      "title": "Data Analytics & Visualization",
-      "description": "From data inception to actionable insights, I design compelling analytics and visualization solutions that illuminate trends, empower decision-making, and drive your business forward."
+      "icon": "fa-solid fa-list-check",
+      "title": "Metadata Creation/Cataloging",
+      "description": "From information chaos to organized assets, I design precise metadata schemas and cataloging systems that ensure discoverability, streamline data retrieval, and preserve the integrity of your digital and physical collections."
     },
     {
-      "icon": "fa-regular fa-sun",
-      "title": "Predictive Analytics and Forecasting",
-      "description": "From data to foresight, I craft predictive analytics and forecasting solutions that steer your business with precision, empowering strategic decisions and ensuring future success."
+      "icon": "fa-solid fa-book-open",
+      "title": "Indexing and Abstracting",
+      "description": "From complex documents to concise insights, I craft detailed indexes and analytical abstracts that distill core information, making vast knowledge bases searchable and empowering users to find exactly what they need instantly."
     },
     {
-      "icon": "fa-regular fa-sun",
-      "title": "Natural Language Processing",
-      "description": "From text to insight, I craft Natural Language Processing solutions that decode language intricacies, revolutionizing data comprehension and empowering your business for success."
+      "icon": "fa-solid fa-server",
+      "title": "Koha ILS Consultation/Installation",
+      "description": "From legacy systems to modern automation, I provide end-to-end Koha ILS solutions, including expert installation and strategic consultation to revolutionize your library management and enhance the user experience."
     }
   ],
   "bottomServices": {
     "right": {
-      "icon": "fa-solid fa-robot",
-      "title": "AI Chatbots",
-      "description": "From design to deployment, I build AI Chatbots that enhance customer interactions, streamline processes, and elevate your brand’s engagement—bringing innovative solutions to your audience’s fingertips."
+      "icon": "fa-solid fa-code",
+      "title": "FullStack Web Developer",
+      "description": "From back-end architecture to front-end interactivity, I build robust, scalable web applications that bridge the gap between complex functionality and seamless performance, bringing your digital vision to life."
     },
     "left": {
-      "icon": "fa-solid fa-microchip",
-      "title": "Machine Learning",
-      "description": "From concept to automation, I craft Machine Learning solutions that decode patterns and optimize performance, driving your business into the era of intelligent automation."
+      "icon": "fa-solid fa-pen-nib",
+      "title": "UI/UX Design",
+      "description": "From wireframes to high-fidelity prototypes, I craft user-centric interfaces and intuitive experiences that prioritize accessibility and aesthetics, ensuring every digital touchpoint is both functional and beautiful."
     }
   },
   "image": {
     "src": "/images/services-ai.jpg",
-    "alt": "AI Technology Visualization"
+    "alt": "Technology and Library Automation Visualization"
   }
 }

@@ -68,20 +68,28 @@
 </template>
 
 <script setup>
-import { computed, ref } from "vue";
+import { computed, ref, watch } from "vue";
 import { useRoute } from "vue-router";
 import projects from "../data/projects.json";
 
 const route = useRoute();
-const slug = computed(() => route.params.slug);
-
 const query = ref("");
+
+const props = defineProps({
+  slug: String // Capture the slug directly from the URL
+});
 
 const blogProjects = computed(() => projects.filter((p) => p.type === "blog"));
 
+// Find the specific post based on the slug prop
 const post = computed(() =>
-  blogProjects.value.find((p) => p.slug === slug.value)
+  blogProjects.value.find((p) => p.slug === props.slug)
 );
+
+// Scroll to top when the slug changes (sidebar clicks)
+watch(() => props.slug, () => {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+});
 
 const filtered = computed(() => {
   const q = query.value.trim().toLowerCase();

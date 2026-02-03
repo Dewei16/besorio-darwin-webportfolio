@@ -15,7 +15,7 @@
           v-if="project.slug"
           class="project-btn"
           :to="{
-            name: 'BlogProjects',
+            name: 'BlogProject',
             params: { slug: project.slug }
           }"
         >
@@ -41,7 +41,7 @@ function truncateWords(text, limit = 20) {
 <style scoped>
 .project-card{
   height: 100%;
-  border-radius: 20px;
+  border-radius: 0 0 20px 20px;
   background: var(--surface);
   overflow: visible;
   transition: 0.25s ease;
